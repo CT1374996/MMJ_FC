@@ -1,0 +1,37 @@
+
+<h2>新規会員登録</h2>
+
+<%= form_with model: @user, url: user_registration_path do |f| %>
+<%= render "public/shared/error_messages", resource: resource %>
+  <div>
+  <%= f.text_field :last_name, autocomplete: "", placeholder: "姓" %><br>
+  <%= f.text_field :first_name, autocomplete: "", placeholder: "名"%>
+  </div>
+  <div>
+  <%= f.text_field :last_name_kana, autocomplete: "", placeholder: "姓カナ" %><br>
+  <%= f.text_field :first_name_kana, autocomplete: "", placeholder: "名カナ" %>
+  </div>
+  <div>
+  <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "メールアドレス" %>
+  </div>
+  <div>
+  <%= f.text_field :postal_code, autocomplete: "", placeholder: "郵便番号(ハイフンなし)" %>
+  </div>
+  <div>
+  <%= f.text_field :address, autocomplete: "", placeholder: "住所" %>
+  </div>
+  <div>
+  <%= f.text_field :telephone_number, autocomplete: "", placeholder: "電話番号(ハイフンなし)" %>
+  </div>
+  <div>
+  <%= f.password_field :password, autocomplete: "new-password", placeholder: "パスワード" %>
+  </div>
+  <div>
+  <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "パスワード確認" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "新規登録" %>
+  </div>
+<% end %>
+
+<%= render "public/shared/links" %>
