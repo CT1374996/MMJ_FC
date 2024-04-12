@@ -1,6 +1,6 @@
-class Admin::InformationsController < ApplicationController
+class Admin::InformationController < ApplicationController
   def index
-    @informations = Information.all
+    @information = Information.all
   end
 
   def new
