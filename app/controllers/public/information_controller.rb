@@ -9,4 +9,7 @@ class Public::InformationController < ApplicationController
   end
 
   private
+  def information_params
+    params.require(:information).permit(:info_title, :info_body)
+  end
 end

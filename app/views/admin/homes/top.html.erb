@@ -1,0 +1,28 @@
+<div class="container">
+<h1>管理者のページ</h1>
+<div class="row">
+
+<div class="col">
+<h5>お知らせ投稿</h5>
+
+タイトル
+
+本文
+
+
+
+</div>
+
+<div class="col">
+<h5>ブログ投稿</h5>
+<%= form_with model: @blog, url: admin_blogs_path do |f| %>
+<div>タイトル</div>
+<div><%= f.text_field :blog_title %></div>
+<div>本文</div>
+<div><%= f.text_area :blog_body %></div>
+<%= f.submit "ブログ送信" %>
+<% end %>
+</div>
+
+</div>
+</div>

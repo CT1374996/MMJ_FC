@@ -1,6 +1,8 @@
 class Admin::InformationController < ApplicationController
+  before_action :authenticate_admin!
   def index
     @information = Information.all
+    @information = Information.order(created_at: :desc)
   end
 
   def new
@@ -26,7 +28,7 @@ class Admin::InformationController < ApplicationController
 
   def update
     @information = Information.find(params[:id])
-    if @information = Information.update(params[:id])
+    if @information.update
       redirect_to admin_information_path(@information.id)
     else
       render :edit
