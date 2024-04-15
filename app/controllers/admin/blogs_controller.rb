@@ -9,7 +9,7 @@ class Admin::BlogsController < ApplicationController
   end
 
   def create
-    @blog = Blog.new(blog__params)
+    @blog = Blog.new(blog_params)
     if @blog.save
       redirect_to admin_blog_path(@blog.id)
     else
@@ -35,6 +35,9 @@ class Admin::BlogsController < ApplicationController
   end
 
   def destroy
+    blog = Blog.find(params[:id])
+    blog.destroy
+    redirect_to admin_blogs_path
   end
 
   private

@@ -4,13 +4,13 @@
 
 <div class="col">
 <h5>お知らせ投稿</h5>
-
-タイトル
-
-本文
-
-
-
+<%= form_with model: @information, url: admin_information_index_path do |f| %>
+<div>タイトル</div>
+<div><%= f.text_field :info_title %></div>
+<div>本文</div>
+<div><%= f.text_area :info_body %></div>
+<%= f.submit "お知らせ送信" %>
+<% end %>
 </div>
 
 <div class="col">

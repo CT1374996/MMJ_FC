@@ -1,0 +1,7 @@
+<div class="container">
+<%= form_with model: @blog, url: admin_blog_path(@blog.id), method: :patch do |f| %>
+<div><%= f.text_field :blog_title %></div>
+<div><%= f.text_area :blog_body %></div>
+<%= f.submit "編集完了" %>
+<% end %>
+</div>
