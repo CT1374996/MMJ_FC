@@ -1,4 +1,6 @@
 <div class="container">
 <h5><%= @information.info_title %></h5>
 <div><%= @information.info_body %></div>
+<div><%= l @information.created_at %></div>
+<%= link_to "編集", edit_admin_information_path(@information.id) %>
 </div>
