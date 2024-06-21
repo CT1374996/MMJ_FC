@@ -28,7 +28,8 @@ class Admin::InformationController < ApplicationController
 
   def update
     @information = Information.find(params[:id])
-    if @information.update
+    if @information.update(information_params)
+      flash[:notice] = "編集しました"
       redirect_to admin_information_path(@information.id)
     else
       render :edit
@@ -36,6 +37,10 @@ class Admin::InformationController < ApplicationController
   end
 
   def destroy
+    information = Information.find(params[:id])
+    information.destroy
+    flash[:notice] = "お知らせを削除しました"
+    redirect_to admin_information_index_path
   end
 
   private

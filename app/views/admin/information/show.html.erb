@@ -1,6 +1,8 @@
 <div class="container">
+<%= flash[:notice] %>
 <h5><%= @information.info_title %></h5>
 <div><%= @information.info_body %></div>
 <div><%= l @information.created_at %></div>
 <%= link_to "編集", edit_admin_information_path(@information.id) %>
+<%= link_to "削除", admin_information_path(@information), method: :delete, data: {confirm: "本当に削除しますか？"} %>
 </div>

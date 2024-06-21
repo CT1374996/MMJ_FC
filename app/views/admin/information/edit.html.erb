@@ -1,3 +1,8 @@
 <div class="container">
-編集
+お知らせ編集
+<%= form_with model: @information, url: admin_information_path(@information.id), method: :patch do |f| %>
+<div>タイトル<br><%= f.text_field :info_title %></div>
+<div>本文<br><%= f.text_area :info_body %></div>
+<%= f.submit '編集完了' %>
+<% end %>
 </div>

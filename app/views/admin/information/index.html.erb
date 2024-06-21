@@ -1,4 +1,5 @@
 <div class="container">
+<%= flash[:notice] %>
 <h2>お知らせ一覧</h2>
 <% @information.each do |information| %>
 <div><%= link_to admin_information_path(information.id) do %><%= information.info_title %><% end %></div>
