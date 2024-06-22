@@ -12,6 +12,7 @@ class Admin::InformationController < ApplicationController
   def create
     @information = Information.new(information_params)
     if @information.save
+      flash[:notice] = "お知らせを投稿しました"
       redirect_to admin_information_path(@information.id)
     else
       render :new
@@ -29,7 +30,7 @@ class Admin::InformationController < ApplicationController
   def update
     @information = Information.find(params[:id])
     if @information.update(information_params)
-      flash[:notice] = "編集しました"
+      flash[:notice] = "お知らせを更新しました"
       redirect_to admin_information_path(@information.id)
     else
       render :edit

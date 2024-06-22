@@ -1,5 +1,6 @@
 <div class="container">
 <h2>MORE MORE JUMP!の日記</h2>
+<%= flash[:notice] %>
 <table class="table">
 <tr>
   <th>タイトル</th>
@@ -9,8 +10,8 @@
 <% @blogs.each do |blog| %>
 <tr>
   <td><%= link_to admin_blog_path(blog.id) do %><%= blog.blog_title %><% end %></td>
-  <td></td>
-  <td></td>
+  <td><%= l blog.created.at %></td>
+  <td><%= l blog.updated.at %></td>
 </tr>
 <% end %>
 </table>

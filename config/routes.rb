@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   }
   scope module: :public do
     root to: "homes#top"
+    get '/メンバー紹介' => 'members#index', as: '/members_index'
+    get '/花里みのり' => 'members#minori_hanasato', as: '/members_minori_hanasato'
+    get '/桐谷遥' => 'members#haruka_kiritani', as: '/members_haruka_kiritani'
+    get '/桃井愛莉' => 'members#airi_momoi', as: '/members_airi_momoi'
+    get '/日野森雫' => 'members#shizuku_hinomori', as: '/members_shizuku_hinomori'
     resources :information, only: [:index, :show]
     resources :blogs, only: [:index, :show]
   end

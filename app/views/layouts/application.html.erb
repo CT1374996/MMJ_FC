@@ -16,23 +16,23 @@
       <% if admin_signed_in? %>
       <%= link_to "TOP", admin_root_path %>
       <%= link_to "お知らせ一覧", admin_information_index_path %>
-      <%= link_to "ブログ一覧", admin_blogs_path %>
+      <%= link_to "日記一覧", admin_blogs_path %>
       グッズ通販
       外部リンク
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
       <% elsif user_signed_in? %>
       <%= link_to "TOP", root_path %>
-      メンバー紹介
-      <%= link_to "お知らせ", information_index_path %>
-      <%= link_to "ブログ", blogs_path %>
+      <%= link_to "メンバー紹介", members_index_path %>
+      <%= link_to "MORE MORE JUMP!からのお知らせ", information_index_path %>
+      <%= link_to "MORE MORE JUMP!の日記", blogs_path %>
       グッズ通販
       外部リンク
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       <% else %>
       <%= link_to "TOP", root_path %>
-      メンバー紹介
-      <%= link_to "お知らせ", information_index_path %>
-      <%= link_to "ブログ", blogs_path %>
+      <%= link_to "メンバー紹介", members_index_path %>
+      <%= link_to "MORE MORE JUMP!からのお知らせ", information_index_path %>
+      <%= link_to "MORE MORE JUMP!の日記", blogs_path %>
       グッズ通販
       外部リンク
       <%= link_to "新規会員登録", new_user_registration_path %>
