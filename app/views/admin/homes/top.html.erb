@@ -24,5 +24,18 @@
 <% end %>
 </div>
 
+<div class="col">
+<h5>グッズ投稿</h5>
+<%= form_with model: @good, url: admin_good_path(@good.id) do |f| %>
+<div>商品名</div>
+<div><%= f.text_field :good_name %></div>
+<div>商品説明</div>
+<div><%= f.text_field :good_info %></div>
+<div>値段</div>
+<div><%= f.text_field :price %></div>
+<%= f.submit "商品登録"
+<% end %>
+</div>
+
 </div>
 </div>
