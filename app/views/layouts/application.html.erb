@@ -17,7 +17,7 @@
       <%= link_to "TOP", admin_root_path %>
       <%= link_to "お知らせ一覧", admin_information_index_path %>
       <%= link_to "日記一覧", admin_blogs_path %>
-      グッズ通販
+      <%= link_to "グッズ一覧", admin_goods_path %>
       外部リンク
       <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
       <% elsif user_signed_in? %>

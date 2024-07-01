@@ -14,13 +14,18 @@ Rails.application.routes.draw do
     get '/桐谷遥' => 'members#haruka_kiritani', as: '/members_haruka_kiritani'
     get '/桃井愛莉' => 'members#airi_momoi', as: '/members_airi_momoi'
     get '/日野森雫' => 'members#shizuku_hinomori', as: '/members_shizuku_hinomori'
+    get '/users/mypage' => 'users#show'
+    get '/users/confirm' => 'users#confirm'
+    patch 'users/withdrawal' => 'users#withdrawal'
     resources :information, only: [:index, :show]
     resources :blogs, only: [:index, :show]
+    resources :goods, only: [:index, :show]
   end
   namespace :admin do
     root to: "homes#top"
     resources :information
     resources :blogs
+    resources :goods
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
